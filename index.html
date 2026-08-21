@@ -7,6 +7,10 @@
 <meta property="og:description" content="Production computer vision systems: warehouse automation, edge video analytics, open-vocabulary detection on DeepStream, and continual-learning research." />
 <meta property="og:type" content="website" />
 <meta name="theme-color" content="#0C1113" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23161D1F' d='M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.78 2.7 1.26 3.36.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.67.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z'/%3E%3C/svg%3E" />
+<script>
+(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
 
 <style>
 /* ============ FONTS ============
@@ -214,6 +218,68 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 @media (max-width: 640px) {
   .nav-links .text-link { display: none; }
 }
+.theme-btn { background: none; cursor: pointer; padding: 0; margin: 0; font: inherit; }
+.theme-btn.icon-link { border: none; }
+.theme-btn .i-sun { display: block; }
+.theme-btn .i-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-btn .i-sun { display: none; }
+  :root:not([data-theme="light"]) .theme-btn .i-moon { display: block; }
+}
+:root[data-theme="dark"] .theme-btn .i-sun { display: none; }
+:root[data-theme="dark"] .theme-btn .i-moon { display: block; }
+:root[data-theme="light"] .theme-btn .i-sun { display: block; }
+:root[data-theme="light"] .theme-btn .i-moon { display: none; }
+
+/* ============ SIDEBAR (desktop) ============ */
+.sidebar { display: none; }
+@media (min-width: 900px) {
+  .nav { display: none; }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 14rem;
+    padding: 2.25rem 1.75rem;
+    border-right: 1px solid var(--line);
+    background: var(--ground);
+    z-index: 40;
+  }
+  main, footer { margin-left: 14rem; }
+}
+.side-mark {
+  font-family: 'Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.side-links {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-family: 'Plex Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.side-links a {
+  text-decoration: none;
+  color: var(--ink-dim);
+  padding: 0.6rem 0 0.6rem 0.9rem;
+  border-left: 2px solid var(--line);
+  transition: color .15s, border-color .15s;
+}
+.side-links a:hover { color: var(--ink); border-color: var(--line-strong); }
+.side-links a.active { color: var(--amber-strong); border-left-color: var(--amber); }
+.side-foot { display: flex; align-items: center; gap: 0.6rem; }
 
 /* ============ HERO ============ */
 .hero {
@@ -469,6 +535,28 @@ footer { padding: 2rem 0 3rem; }
 
 <body>
 
+<aside class="sidebar" aria-label="Section navigation">
+  <div>
+    <a class="side-mark" href="#top"><span class="dot"></span>NQT</a>
+    <nav class="side-links">
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="side-foot">
+    <button class="icon-btn theme-btn js-theme-toggle" type="button" aria-label="Toggle light/dark theme">
+      <svg class="i-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      <svg class="i-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+    <a class="icon-btn" href="https://github.com/tuan2k33" aria-label="GitHub" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.78 2.7 1.26 3.36.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.67.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+    </a>
+  </div>
+</aside>
+
 <nav class="nav">
   <div class="wrap nav-row">
     <a class="nav-mark" href="#top"><span class="dot"></span>NQT</a>
@@ -478,6 +566,10 @@ footer { padding: 2rem 0 3rem; }
       <a class="text-link" href="#projects">Projects</a>
       <a class="text-link" href="#research">Research</a>
       <a class="text-link" href="#contact">Contact</a>
+      <button class="icon-link theme-btn js-theme-toggle" type="button" aria-label="Toggle light/dark theme">
+        <svg class="i-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+        <svg class="i-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
       <a class="icon-link" href="https://github.com/tuan2k33" aria-label="GitHub" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.78 2.7 1.26 3.36.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.67.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
       </a>
@@ -880,5 +972,39 @@ footer { padding: 2rem 0 3rem; }
     <span>Ho Chi Minh City, Vietnam</span>
   </div>
 </footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  function current() {
+    var a = root.getAttribute('data-theme');
+    if (a) return a;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.querySelectorAll('.js-theme-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  });
+
+  var sections = document.querySelectorAll('main section[id]');
+  var links = document.querySelectorAll('.side-links a');
+  if (sections.length && links.length && 'IntersectionObserver' in window) {
+    var map = {};
+    links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var link = map[entry.target.id];
+        if (!link || !entry.isIntersecting) return;
+        links.forEach(function (l) { l.classList.remove('active'); });
+        link.classList.add('active');
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+})();
+</script>
 
 </body>
