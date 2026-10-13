@@ -529,6 +529,10 @@ section + section { border-top: 1px solid var(--line); }
 }
 .contact-links a .k { color: var(--ink-faint); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; min-width: 5.5rem; }
 .contact-links a:hover { color: var(--teal-strong); border-color: var(--teal); }
+.contact-links .cv-row { display: flex; align-items: baseline; gap: 1rem; font-family: 'Plex Mono', monospace; font-size: clamp(0.95rem, 2vw, 1.2rem); padding-bottom: 0.6rem; border-bottom: 1px solid var(--line); }
+.contact-links .cv-row .k { color: var(--ink-faint); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; min-width: 5.5rem; }
+.contact-links .cv-row a.cv-btn { display: inline-block; padding: 0.15rem 0.8rem; border: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.contact-links .cv-row a.cv-btn:hover { border-color: var(--teal); }
 footer { padding: 2rem 0 3rem; }
 .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-family: 'Plex Mono', monospace; font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.03em; }
 </style>
@@ -960,8 +964,10 @@ footer { padding: 2rem 0 3rem; }
           <a href="mailto:tuan16work@gmail.com"><span class="k">Email</span>tuan16work@gmail.com</a>
           <a href="tel:+84966228451"><span class="k">Phone</span>+84 966 228 451</a>
           <a href="https://github.com/tuan2k33" target="_blank" rel="noopener"><span class="k">GitHub</span>github.com/tuan2k33</a>
-          <a href="./cv-nguyen-quoc-tuan-en.pdf"><span class="k">CV · EN</span>Download PDF ↓</a>
-          <a href="./cv-nguyen-quoc-tuan-vi.pdf"><span class="k">CV · VI</span>Tải PDF ↓</a>
+          <div class="cv-row"><span class="k">CV</span>
+            <a class="cv-btn" href="./cv-nguyen-quoc-tuan-en.pdf">EN ↓</a>
+            <a class="cv-btn" href="./cv-nguyen-quoc-tuan-vi.pdf">VI ↓</a>
+          </div>
         </div>
       </div>
     </div>
