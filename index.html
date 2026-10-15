@@ -597,7 +597,7 @@ footer { padding: 2rem 0 3rem; }
         <h1>Nguyễn Quốc Tuấn</h1>
         <p class="role">AI ENGINEER — COMPUTER VISION</p>
 
-        <p class="lead">AI Engineer with over 1 year of production experience building end-to-end computer vision systems — from model training to edge deployment and real-time pipelines. Focused on turning slow, manual, or unsafe workflows into fast, automated processes, with hands-on experience across lightweight models and edge devices.</p>
+        <p class="lead">AI Engineer with over 1 year of production experience building end-to-end computer vision systems — from model training to real-time edge deployment. Focused on turning slow, manual, or unsafe workflows into fast, automated processes. Experienced in fusing and quantizing models for edge deployment.</p>
 
         <div class="stat-strip">
           <div class="stat">1+ Yr Production AI</div>
@@ -632,13 +632,13 @@ footer { padding: 2rem 0 3rem; }
         <div class="skill-group">
           <div class="label">Machine Learning</div>
           <div class="skill-chips">
-            <span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">YOLO</span><span class="tag">ResNet</span><span class="tag">OCR</span>
+            <span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">YOLO</span><span class="tag">ResNet</span><span class="tag">ViT</span><span class="tag">OCR</span>
           </div>
         </div>
         <div class="skill-group">
           <div class="label">MLOps &amp; Edge</div>
           <div class="skill-chips">
-            <span class="tag">TensorRT</span><span class="tag">NVIDIA DeepStream</span><span class="tag">Triton</span><span class="tag">Docker</span><span class="tag">Linux (Ubuntu)</span>
+            <span class="tag">TensorRT</span><span class="tag">NVIDIA DeepStream</span><span class="tag">Triton</span><span class="tag">NVIDIA Jetson (Orin, Thor)</span><span class="tag">Kafka</span><span class="tag">Docker</span><span class="tag">Linux (Ubuntu)</span>
           </div>
         </div>
         <div class="skill-group">
@@ -694,7 +694,7 @@ footer { padding: 2rem 0 3rem; }
               <div class="pb-title"><a href="#truck-tarp">Truck Tarp Violation Detection</a></div>
               <div class="pb-stack">Python · DETR · ResNet</div>
             </div>
-            <p>Full detection pipeline flagging uncovered/unshielded construction-material trucks — 91% end-to-end accuracy.</p>
+            <p>Full detection pipeline flagging uncovered/unshielded construction-material trucks — 91% end-to-end accuracy and 97% recall in automated testing on private datasets.</p>
           </div>
 
           <div class="proj-bullet">
@@ -702,7 +702,7 @@ footer { padding: 2rem 0 3rem; }
               <div class="pb-title"><a href="#household-reid">Household Re-ID for Smart-Home</a></div>
               <div class="pb-stack">Python · ViT · PyTorch</div>
             </div>
-            <p>ID system for residents, neighbors, and pets to flag unknown persons/animals — fine-tuned ViT with a custom retrieval head, 95% mAP, 99% Rank-1.</p>
+            <p>ID system for residents, neighbors, and pets to flag unknown persons/animals — fine-tuned ViT with a custom retrieval head, 95% mAP, 99% Rank-1 in automated testing on private datasets.</p>
           </div>
         </div>
 
@@ -720,7 +720,7 @@ footer { padding: 2rem 0 3rem; }
               <div class="pb-title"><a href="#iccv">Warehouse Inventory Counting System (ICCV)</a></div>
               <div class="pb-stack">Python · ResNet · YOLO · OCR · decord · OpenCV</div>
             </div>
-            <p>Replaced manual pallet counting with parallel AI-camera processing — 5x faster, safer for workers, 90–94% accuracy extracting bin images/video and 81% accuracy on per-package info (count, fullness, SKU).</p>
+            <p>Replaced manual pallet counting with parallel AI-camera processing — 5x faster, safer for workers, 90–94% video-to-crop accuracy and 81% counting accuracy (measured on onsite production video).</p>
           </div>
 
           <div class="proj-bullet">
@@ -728,7 +728,7 @@ footer { padding: 2rem 0 3rem; }
               <div class="pb-title"><a href="#event-analytics">Event Analytics Pipeline</a></div>
               <div class="pb-stack">Python · NVIDIA DeepStream · ServiceMaker</div>
             </div>
-            <p>Real-time video analytics on Jetson, handling multiple RTSP streams with a store-and-process pipeline (chunking, rule engine, rolling buffering).</p>
+            <p>Real-time video analytics on Jetson, handling multiple RTSP streams with a store-and-process pipeline (chunking, rule engine, rolling buffering), publishing events to Kafka.</p>
           </div>
 
           <div class="proj-bullet">
@@ -736,7 +736,7 @@ footer { padding: 2rem 0 3rem; }
               <div class="pb-title">Model Research &amp; PoC</div>
               <div class="pb-stack">Python · YOLO · ResNet · TensorRT</div>
             </div>
-            <p>Warehouse object detector on a 3M-image, 16-class dataset (85% mAP); PPE compliance classifier — helmet, vest, coverall — via one ResNet multi-output head (88% accuracy across all three); fused/quantized to TensorRT for real-time Jetson inference.</p>
+            <p>Warehouse object detector on a 3M-image, 16-class dataset (85% mAP@0.5); PPE compliance classifier — helmet, vest, coverall — via one ResNet multi-output head (88% accuracy, 5% false alarm); fused/quantized to TensorRT for real-time Jetson inference.</p>
           </div>
         </div>
 
@@ -791,9 +791,9 @@ footer { padding: 2rem 0 3rem; }
             </div>
 
             <div class="case-side">
-              <div class="stat-box"><div class="num">90–94%</div><div class="desc">accuracy extracting bin images/video clips</div></div>
+              <div class="stat-box"><div class="num">90–94%</div><div class="desc">video-to-crop accuracy</div></div>
               <div class="stat-box"><div class="num">5×</div><div class="desc">faster than manual counting</div></div>
-              <div class="stat-box"><div class="num">81%</div><div class="desc">accuracy on box count / fullness / SKU extraction</div></div>
+              <div class="stat-box"><div class="num">81%</div><div class="desc">counting accuracy (onsite production video)</div></div>
               <div class="case-code"><a href="https://github.com/tuan2k33/ICCV" target="_blank" rel="noopener">github.com/tuan2k33/ICCV ↗</a></div>
             </div>
           </div>
@@ -819,6 +819,7 @@ footer { padding: 2rem 0 3rem; }
             </div>
             <div class="case-side">
               <div class="stat-box"><div class="num">91%</div><div class="desc">end-to-end accuracy</div></div>
+              <div class="stat-box"><div class="num">97%</div><div class="desc">recall (private datasets)</div></div>
             </div>
           </div>
         </article>
@@ -861,13 +862,14 @@ footer { padding: 2rem 0 3rem; }
           <div class="case-grid">
             <div class="case-body">
               <h4>Problem &amp; approach</h4>
-              <p>Deployed real-time video analytics directly on Jetson devices, handling multiple concurrent RTSP camera streams through a store-and-process pipeline: MP4/JSON chunking, a rule engine over the chunked events, and rolling buffering. Scaled across two edge tiers, both running 25fps real-time processing — 8 cameras on a Jetson Orin Nano, and 60 cameras on a Jetson AGX Orin.</p>
+              <p>Deployed real-time video analytics directly on Jetson devices, handling multiple concurrent RTSP camera streams through a store-and-process pipeline: MP4/JSON chunking, a rule engine over the chunked events, and rolling buffering, publishing events to Kafka. Scaled to 8 cameras at 25fps on a Jetson Orin Nano and 60 at 25fps (fully loaded) on a Jetson AGX Orin; also deployed on a Jetson Thor for a 5-camera site.</p>
               <h4>Key trade-off</h4>
               <p>Store-and-process with a rolling buffer over pure per-frame streaming inference — a rolling buffer means an exported event can include the seconds <em>before</em> it triggered, which a stateless streaming pipeline can't reconstruct after the fact.</p>
             </div>
             <div class="case-side">
               <div class="stat-box"><div class="num">8 cam · 25fps</div><div class="desc">real time on Jetson Orin Nano</div></div>
-              <div class="stat-box"><div class="num">60 cam · 25fps</div><div class="desc">real time on Jetson AGX Orin</div></div>
+              <div class="stat-box"><div class="num">60 cam · 25fps</div><div class="desc">real time on Jetson AGX Orin (fully loaded)</div></div>
+              <div class="stat-box"><div class="num">5 cam</div><div class="desc">site deployed on Jetson Thor</div></div>
             </div>
           </div>
         </article>
@@ -914,9 +916,10 @@ footer { padding: 2rem 0 3rem; }
               </ul>
 
               <h4>Signal</h4>
-              <p>Reached real-time throughput on 4-camera RTSP with on-the-fly model updates. The repo is public and has already taken an external contribution: a community-filed issue on the detection-score calculation, with a merged PR fixing it.</p>
+              <p>Reached 10 FPS per stream on 4-camera RTSP 1080p (RTX 5070, 4GB) with on-the-fly model updates. The repo is public and has already taken an external contribution: a community-filed issue on the detection-score calculation, with a merged PR fixing it.</p>
             </div>
             <div class="case-side">
+              <div class="stat-box"><div class="num">10 FPS</div><div class="desc">per stream, 4-camera RTSP 1080p (RTX 5070, 4GB)</div></div>
               <div class="stat-box"><div class="num">19.3–179ms</div><div class="desc">latency across 280–1008px input</div></div>
               <div class="stat-box"><div class="num">1 issue · 1 PR</div><div class="desc">external contribution, merged</div></div>
               <div class="case-code"><a href="https://github.com/tuan2k33/SAM3-DeepStream" target="_blank" rel="noopener">github.com/tuan2k33/SAM3-DeepStream ↗</a></div>
@@ -940,6 +943,8 @@ footer { padding: 2rem 0 3rem; }
               <p>A self-supervised continual learning method combining contrastive loss, pixel-level mixup, and distillation to preserve earlier representations while new ones are learned.</p>
               <h4>Result</h4>
               <p>92% accuracy on EuroSAT (aerial/satellite imagery). Accepted at <em>The 2nd International Conference on Intelligent Aerial Access and Applications (IAAA 2026)</em>, published in Springer's <em>Lecture Notes in Networks and Systems</em>, SCOPUS-indexed.</p>
+              <h4>Authors</h4>
+              <p>Tin Duc Duong, Tuan Quoc Nguyen, Trang Hong Le.</p>
             </div>
             <div class="case-side">
               <div class="stat-box"><div class="num">92%</div><div class="desc">accuracy on EuroSAT</div></div>
