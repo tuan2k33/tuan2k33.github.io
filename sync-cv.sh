@@ -13,12 +13,6 @@ if [ ! -f "$SRC" ]; then
   exit 1
 fi
 
-HASH=$(sha256sum "$SRC" | cut -d' ' -f1)
-if [ "$(cat "$STAMP" 2>/dev/null)" = "$HASH" ] && cmp -s "$SRC" "$ALL"; then
-  echo "= CV không đổi, không cần push."
-  exit 0
-fi
-
 uv run --quiet --with pypdf python - "$SRC" "$DIR" <<'PY'
 import sys
 from pypdf import PdfReader, PdfWriter
@@ -35,7 +29,7 @@ PY
 cp "$SRC" "$ALL"
 echo "$HASH" > "$STAMP"
 cd "$DIR"
-git add index.html cv-nguyen-quoc-tuan.pdf cv-nguyen-quoc-tuan-en.pdf cv-nguyen-quoc-tuan-vi.pdf .cv-source.sha256 sync-cv.sh
+git add .
 git commit -q -m "Update CV (EN and VI)"
 git push -q
 echo "✓ Đã cập nhật CV: $SITE/cv-nguyen-quoc-tuan.pdf, -en.pdf và -vi.pdf"
